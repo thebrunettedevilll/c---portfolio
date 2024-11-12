@@ -1,0 +1,35 @@
+using System;
+public class Programm
+{
+    public static int A(int n)
+    {
+        if (n == 1)
+        return 2;
+        if (n == 2) 
+        return 4;
+        if (n == 3)
+        return 6;
+
+        int a1 = 2;
+        int a2 = 4;
+        int a3 = 6;
+
+        for (int i = 4; i<=n; i++)
+        {
+            int an = 3*a1+4*a2-7*a3;
+            a1 = a2;
+            a2 = a3;
+            a3 = an;
+        }
+        return a3;
+    }
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Enter a number:");
+        int num = int.Parse(Console.ReadLine());
+        int res = A(num);
+        Console.WriteLine($"The result is:{res}");
+        Console.ReadKey();
+    }
+
+}
